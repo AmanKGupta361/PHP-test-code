@@ -1,12 +1,83 @@
+Q.1
+
 <?php
 $arr=array('1','9','8','2','7','6','3','5','4');
 for($i=0;$i<count($arr);$i++)
  for($j=0;$j<count($arr)-1;$j++)
- if($arr[$j]>$arr[$j+1]
+ if($arr[$j]>$arr[$j+1])
  {
   $temp=$arr[$j+1];
   $arr[$j+1]=$arr[$j];
-  $arr[$j]=temp;
+  $arr[$j]=$temp;
  }
  print_r($arr);
  ?>
+
+
+/**************************************************************************************************************************/
+Q.2
+
+<?php
+$arr=array('1','2','2','3',...............);
+for($i=0;$i<count($arr)-1;$i++)
+if($arr[$i]==$arr[$i+1])
+ $temp=$arr[$i];
+echo "The repeated element is $temp";
+?>
+
+
+/**************************************************************************************************************************/
+Q.3
+
+<?php
+$arr=array('1','1','0','0','1','1','1','1','0','1','0');
+$l=sizeof($arr);
+$count=0;
+$flag=0;
+for($i=0;$i<$l;$i++)
+{
+ if($arr[$i]==0)
+  $count=0;
+ else
+ {
+  $count++;
+  $flag=max($flag,$count);
+ }
+}
+echo $flag;
+?>
+
+/**************************************************************************************************************************/
+Q.4
+
+<?php
+$arr;
+$value;
+$length=sizeof($arr);
+for($i=0;$i<$length-1;$i++)
+ for($j=$i+1;$j<$length;$j++)
+ if($arr[$i]+$arr[$j]==$value)
+  echo "$a[$i],$a[$j]\n";
+?>  
+
+
+/**************************************************************************************************************************/
+Q.5
+
+CREATE DATABASE temp;
+CREATE TABLE User(
+  'User_ID' INT NOT NULL AUTO_INCREMENT,
+  `User_name` varchar(10) NOT NULL,
+  `Password` varchar(10) NOT NULL,
+   PRIMARY KEY(User_ID)
+   );
+ CREATE TABLE Address(
+  'Id' INT
+  `street` varchar(10),
+  `Pincode` int(6) NOT NULL,
+  `Country` varchar(10) ,
+  `State` varchar(10) ,
+  `Phone_no` int(10) ,
+  FOREIGN KEY(Id) REFERENCES User(User_id)
+  );
+  
